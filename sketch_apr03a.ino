@@ -24,15 +24,15 @@
 #define BODY_MAX 1800
 #define ARM_MIN 100
 #define ARM_MAX 2600
-#define HAND_MIN 500
-#define HAND_MAX 1500
+#define HAND_MIN 1300
+#define HAND_MAX 1800
 
 #define FOOT_DEFAULT 1200
 #define BODY_DEFAULT 1200
 #define ARM_DEFAULT 1150
-#define HAND_DEFAULT 1500
+#define HAND_DEFAULT 1300
 #define GREY_LIMIT 500
-#define CAT_LIMIT 23
+#define CAT_LIMIT 18
 #define COLOR_LIMIT 7
 Servo foot;
 Servo body;
@@ -151,7 +151,7 @@ void autogo()
               digitalWrite(LEFT2_GO_PIN, LOW);
               digitalWrite(RIGHT1_GO_PIN, HIGH);
               digitalWrite(RIGHT2_GO_PIN, LOW);
-              delay(50);
+              delay(10);
               digitalWrite(LEFT1_GO_PIN, LOW);
               digitalWrite(LEFT2_GO_PIN, LOW);
               digitalWrite(RIGHT1_GO_PIN, LOW);
@@ -173,8 +173,8 @@ void autogo()
             delay(1000);
             bodyPwm=BODY_MIN;
             body.writeMicroseconds(bodyPwm);
-            delay(1000);
-            handPwm=1200;
+            delay(3000);
+            handPwm=1500;
             hand.writeMicroseconds(handPwm);
             delay(1000);
             if(color){
